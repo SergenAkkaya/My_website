@@ -1,0 +1,15 @@
+$color--white               : #FFFFFF;
+$color--black               : #000000;
+$color--main1              : #0F103F;
+.color--white               { color: $color--white!important; }
+.bg--white                  { background-color: $color--white!important; }
+.br--white                  { border-color: $color--white!important; }
+
+.color--black               { color: $color--black!important; }
+.bg--black                  { background-color: $color--black!important; }
+.br--black                  { border-color: $color--black!important; }
+
+
+.color--main1            { color: $color--main1     !important; }
+.bg--main1                 { background-color: $color--main1     !important; }
+.br--main1                  { border-color: $color--main1     !important; }

@@ -1,0 +1,326 @@
+// Renk Değişkenleri
+$accent-color: #9B59B6; // Varsayılan Mor
+$accent-color-dark: #8E44AD;
+$bg-dark: #111115;
+$bg-light: #FFFFFF;
+$card-bg-dark: #1A1A1E;
+$card-bg-light: #F7FAFC;
+$text-light: #F3F4F6;
+$text-dark: #111115;
+$secondary-text-dark: #A0AEC0;
+$secondary-text-light: #4A5568;
+
+// CSS Değişkenleri (JavaScript ile güncellenecek)
+:root {
+    --accent-color: #{$accent-color};
+    --accent-color-dark: #{$accent-color-dark};
+}
+
+// Global Renk Yönetimi (Koyu Mod Varsayılan)
+
+
+// Sticky Header Stili (Scroll olduğunda eklenecek)
+.sticky-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(17, 17, 21, 0.95) !important; // Transparan Siyah
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: $text-light !important;
+}
+
+// HEADER STİLİ
+.main-header {
+    position: absolute; // Başlangıçta üstte sabit durması için
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 0;
+    transition: background-color 0.3s, padding 0.3s;
+    z-index: 10;
+
+    .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 640px) {
+            padding: 0 1rem;
+        }
+    }
+}
+
+// LOGO ALANI
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .logo-diamond {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: var(--accent-color);
+        border-radius: 4px;
+        transform: rotate(45deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+
+        .logo-dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: white;
+            border-radius: 50%;
+            transform: rotate(-45deg);
+        }
+    }
+
+    .logo-text {
+        font-size: 1.25rem; // text-xl
+        font-weight: 800; // font-extrabold
+        letter-spacing: -0.025em; // tracking-tight
+    }
+}
+
+// NAVİGASYON/SOSYAL VE AYARLAR ALANI
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .social-icon {
+        color: $secondary-text-dark; // Koyu mod secondary text
+        font-size: 1.25rem;
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--accent-color);
+        }
+    }
+
+    // Açık modda sosyal ikon rengi ayarı
+    body:not(.dark-mode) & .social-icon {
+        color: $secondary-text-light;
+    }
+
+    .settings-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--accent-color);
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        border-radius: 50%;
+        transition: background-color 0.2s, color 0.2s;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        body:not(.dark-mode) &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+
+// AYARLAR POP-UP / MODAL STİLİ
+.settings-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    display: none; // Başlangıçta gizli
+    justify-content: flex-end; // İçeriği sağa yasla
+    animation: fadeIn 0.3s ease-in-out;
+
+    &.active {
+        display: flex;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: 350px;
+        height: 100%; // Tam ekran yüksekliği
+        padding: 2rem;
+        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+        position: relative;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-out;
+
+        @media (max-width: 640px) {
+            max-width: 100%; // Mobile tam genişlik
+        }
+    }
+
+    &.active .modal-content {
+        transform: translateX(0);
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid;
+    }
+
+    .close-modal-btn {
+        //position: absolute;
+        //top: 1.5rem;
+        //left: 1.5rem;
+        width: 100px;
+        height: 100px;
+        background: none;
+        border: none;
+        color: inherit;
+        font-size: 1.5rem;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+// Ayar Grupları
+.setting-group {
+    margin-bottom: 2rem;
+
+    .setting-label {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+}
+
+// Koyu/Açık Mod Switch Stili (Toggle Switch)
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+
+        &.round {
+            border-radius: 34px;
+        }
+
+        &.round:before {
+            border-radius: 50%;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+    }
+
+    input:checked+.slider {
+        background-color: var(--accent-color);
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px var(--accent-color);
+    }
+
+    input:checked+.slider:before {
+        transform: translateX(26px);
+    }
+}
+
+// Vurgu Rengi Seçenekleri
+.color-options {
+    display: flex;
+    gap: 1rem;
+
+    .color-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.2s, border-color 0.2s;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &.active {
+            opacity: 1;
+            border-color: var(--accent-color); // Seçili rengin etrafında vurgu rengi
+        }
+    }
+}
+
+// Sahte İçerik Stili (Sadece sticky efekti göstermek için)
+.hero-section {
+    padding: 10rem 1.5rem 5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    opacity: 0.7;
+
+    // Fotoğrafın olduğu yerdeki halka stilini simüle edelim
+    .hero-avatar {
+        width: 200px;
+        height: 200px;
+        margin: 2rem auto;
+        border-radius: 50%;
+        background-color: var(--accent-color);
+        box-shadow: 0 0 0 12px var(--accent-color);
+    }
+}
+    @media (max-width:1366px) {}
+
+    @include media-breakpoint-down(lg) {}
+
+    @include media-breakpoint-down(md) {}
+
+    @include media-breakpoint-down(sm) {
+        .main-header {
+            padding: 1rem;
+
+            .header-container {
+                padding: 0 0.5rem;
+                display: flex;
+                flex-direction: column !important;
+                gap: 1rem;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(def) {}
