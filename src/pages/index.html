@@ -12,25 +12,59 @@
     integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
   <script src="https://kit.fontawesome.com/6de6585d91.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <title>Html-Webpack-Template</title>
+  <title>Sergen Akkaya</title>
 </head>
 
 <body data-template="index">
-  <header_section></header_section>    
-  <!-- İçeriğin kaydırma etkisini göstermesi için sahte içerik -->
-    <section>
-      <main class="content-placeholder">
-        <div class="hero-section">
-          <div class="hello_text h-100 d-flex flex-column gap-2 justify-content-left"><span class="header_text">Hi I'm Sergen</span><span class="header_text_small">Frontend Developer</span></div>
-          <div class="hello_img"></div>
+  <header_section></header_section>
+  <section class="container hello">
+    <div class="hello_content">
+      <div class="hello_content_text">
+        <span>Hi! I'm Sergen.</span>
+        <span class="hello_content_text_2">Front-end Developer</span>
+        <span class="hello_content_text_3">I don't just build UIs, I break them down and rebuild them better. Currently
+          conquering the university chaos while building the fastest front-ends you'll see. Got a challenge? Drop
+          it.</span>
+        <div class="hello_content_text_buttons">
+
+          <a href="mailto:akkayasergen59@gmail.com" class="hello_content_text_buttons_eposta">
+            Drop it! 
+          </a>
+
+          <a href="./assets/CV.pdf" download class="hello_content_text_buttons_cv">
+            My CV
+          </a>
+
         </div>
-    </main>
-    </section>
+      </div>
+      <div class="hello_content_img">
+        <div class="blob-profile-container">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <mask id="blobMask">
+                <path fill="white"
+                  d="M41.5,-70.6C53.5,-62.8,63.2,-53,69.2,-41.3C75.2,-29.6,77.4,-14.8,77.4,0.2C77.4,15.3,75.2,30.5,68.7,43.9C62.2,57.4,51.3,69.2,38.2,75.7C25.1,82.3,9.8,83.6,-4.9,83.1C-19.6,82.5,-33.7,80.2,-45.9,73.4C-58.2,66.6,-68.6,55.4,-75.1,42.1C-81.5,28.8,-84.1,14.4,-82.2,0.8C-80.2,-12.9,-73.6,-25.7,-65.5,-37.2C-57.4,-48.6,-47.9,-58.7,-36.3,-67.2C-24.8,-75.6,-12.4,-82.4,0.8,-83.7C14.1,-85,28.1,-80.9,41.5,-70.6Z"
+                  transform="translate(100 100)" />
+              </mask>
+            </defs>
+
+            <path fill="#9B59B6" class="blob"
+              d="M41.5,-70.6C53.5,-62.8,63.2,-53,69.2,-41.3C75.2,-29.6,77.4,-14.8,77.4,0.2C77.4,15.3,75.2,30.5,68.7,43.9C62.2,57.4,51.3,69.2,38.2,75.7C25.1,82.3,9.8,83.6,-4.9,83.1C-19.6,82.5,-33.7,80.2,-45.9,73.4C-58.2,66.6,-68.6,55.4,-75.1,42.1C-81.5,28.8,-84.1,14.4,-82.2,0.8C-80.2,-12.9,-73.6,-25.7,-65.5,-37.2C-57.4,-48.6,-47.9,-58.7,-36.3,-67.2C-24.8,-75.6,-12.4,-82.4,0.8,-83.7C14.1,-85,28.1,-80.9,41.5,-70.6Z"
+              transform="translate(100 100)" />
+
+            <image x="0" y="0" width="200" height="200" href="./assets/Profile.png" mask="url(#blobMask)" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 

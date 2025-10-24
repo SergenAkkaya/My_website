@@ -316,6 +316,10 @@ $(document).ready(function() {
         $(this).addClass('active');
         // 4. Arka plan kutularının rengini güncelleme
         $(".backboxNew").css("background-color", newColor);
+        $(".hello_content_text_buttons_eposta").css("background-color", newColor);
+        $(".hello_content_text_buttons_cv").css("background-color", newColor);
+        $(".blob").css("fill", newColor);
+
     });
 });
 

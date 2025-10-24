@@ -23,6 +23,10 @@ body {
         .settings-modal .modal-title {
             border-bottom-color: rgba(255, 255, 255, 0.1);
         }
+
+        a {
+            color: $text-light;
+        }
     }
 
     // Açık Mod Stilleri
@@ -42,33 +46,171 @@ body {
         .settings-modal .modal-title {
             border-bottom-color: rgba(0, 0, 0, 0.1);
         }
+
+        a {
+            color: $text-dark;
+        }
     }
 }
-.hero-section {
-    padding: 10rem 1.5rem 5rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    opacity: 0.7;
-    display: flex;
-    justify-content: space-between;
-    // Fotoğrafın olduğu yerdeki halka stilini simüle edelim
-    .hero-avatar {
-        width: 200px;
-        height: 200px;
-        margin: 2rem auto;
-        border-radius: 50%;
-        background-color: var(--accent-color);
-        box-shadow: 0 0 0 12px var(--accent-color);
+
+.hello {
+    &_content {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Poppins, sans-serif;
+        gap: 30px;
+
+        &_text {
+            font-size: 3rem;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+
+            &_2 {
+                font-size: 2rem;
+                font-weight: 400;
+                margin-top: 1rem;
+                filter: blur(1px);
+            }
+
+            &_3 {
+                word-spacing: 5px;
+                max-width: 30rem;
+                font-size: 1.5rem;
+                margin-top: 1rem;
+                font-weight: 300;
+            }
+
+            &_buttons {
+                margin-top: 2rem;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                font-size: 2rem;
+                font-weight: 500;
+                &_eposta,
+                &_cv {
+                    transition-duration: 0.8s;
+                    cursor: pointer;
+                    background-color: $accent-color;
+                    text-decoration: none;
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 5px;
+                    font-weight: 500;
+
+                    &:hover {
+                        transform: scale(1.1);
+                        box-shadow: rgba(0, 0, 0, 0.1);
+                    }
+                }
+            }
+        }
+
+        &_img {
+            width: 30rem;
+            height: 30rem;
+            overflow: hidden;
+        }
+
+        .blob-profile-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .blob-profile-container svg {
+            width: 100%;
+            height: 100%;
+        }
     }
 }
+
 @media (max-width:1366px) {}
 
-@include media-breakpoint-down(lg) {}
+@include media-breakpoint-down(lg) {
+    .hello {
+        margin-top: 5rem;
+
+        &_content {
+            gap: 20px;
+
+            &_text {
+                font-size: 2.5rem;
+            }
+
+            .hello_content_img {
+                width: 25rem;
+                height: 25rem;
+            }
+        }
+    }
+}
 
 @include media-breakpoint-down(md) {
+    .hello {
+        margin-top: 5rem;
+        height: auto !important;
+        &_content {
+            flex-wrap: wrap;
+            gap: 10px;
+
+            &_text {
+                font-size: 2rem;
+
+                &_buttons {
+                    justify-content: center !important;
+
+                    &_eposta,
+                    &_cv {
+                        cursor: pointer;
+                        text-decoration: none;
+                        padding: -0.25rem 0.5rem;
+                        border-radius: 5px;
+                        font-weight: 200;
+                    }
+                }
+            }
+
+            .hello_content_img {
+                width: 20rem;
+                height: 20rem;
+            }
+        }
+    }
 }
 
 @include media-breakpoint-down(sm) {
+    .hello {
+        margin-top: 7rem;
+
+        &_content {
+            justify-content: center !important;
+
+            &_text {
+                font-size: 2rem;
+            }
+
+            &_text_2 {
+                font-size: 1.5rem;
+            }
+
+            &_text_3 {
+                font-size: 1rem;
+            }
+
+            .hello_content_img {
+                width: 20rem;
+                height: 20rem;
+            }
+        }
+    }
 }
 
 @include media-breakpoint-down(def) {}
