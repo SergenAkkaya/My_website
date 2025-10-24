@@ -45,96 +45,11 @@ body {
     }
 }
 
-// Arka Plan Kutuları
-.backboxes {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    & .backbox {
-        height: 30rem;
-        width: 30rem;
-        rotate: 45deg;
-        filter: blur(30px);
-        background: #9B59B6;
-        position: relative;
-        overflow: hidden;
-        z-index: -1;
-        top: 300px;
-        left: 900px;
-        border-radius: 25%;
-        &_2 {
-            height: 30rem;
-            width: 30rem;
-            rotate: 45deg;
-            filter: blur(30px);
-            background: #9B59B6;
-            position: relative;
-            overflow: hidden;
-            z-index: -1;
-            top: 500px;
-            left: auto;
-            right: 100px;
-        }
-
-        &_3 {
-            height: 30rem;
-            width: 30rem;
-            rotate: 45deg;
-            filter: blur(30px);
-            background: #9B59B6;
-            position: relative;
-            overflow: hidden;
-            z-index: -1;
-            top: 700px;
-            left: 1000px;
-        }
-
-        &_4 {
-            height: 30rem;
-            width: 30rem;
-            rotate: 45deg;
-            filter: blur(30px);
-            background: #9B59B6;
-            position: relative;
-            overflow: hidden;
-            z-index: -1;
-            top: 1000px;
-            left: 50px;
-            right: auto;
-        }
-    }
-}
-
 @media (max-width:1366px) {}
 
 @include media-breakpoint-down(lg) {}
 
 @include media-breakpoint-down(md) {
-    .backboxes {
-        & .backbox {
-            height: 10rem;
-            width: 10rem;
-            left: 20px;
-            &_2 {
-                height: 10rem;
-                width: 10rem;
-                left: 600px;
-            }
-
-            &_3 {
-                height: 10rem;
-                width: 10rem;
-                left: 10px;
-            }
-
-            &_4 {
-                height: 10rem;
-                width: 10rem;
-                left: 600px;
-            }
-        }
-    }
 }
 
 @include media-breakpoint-down(sm) {
