@@ -1,23 +1,10 @@
 // Renk Değişkenleri
-$accent-color: #9B59B6; // Varsayılan Mor
-$accent-color-dark: #8E44AD;
-$bg-dark: #111115;
-$bg-light: #FFFFFF;
-$card-bg-dark: #1A1A1E;
-$card-bg-light: #F7FAFC;
-$text-light: #F3F4F6;
-$text-dark: #111115;
-$secondary-text-dark: #A0AEC0;
-$secondary-text-light: #4A5568;
 
 // CSS Değişkenleri (JavaScript ile güncellenecek)
 :root {
     --accent-color: #{$accent-color};
     --accent-color-dark: #{$accent-color-dark};
 }
-
-// Global Renk Yönetimi (Koyu Mod Varsayılan)
-
 
 // Sticky Header Stili (Scroll olduğunda eklenecek)
 .sticky-header {
@@ -286,24 +273,6 @@ $secondary-text-light: #4A5568;
     }
 }
 
-// Sahte İçerik Stili (Sadece sticky efekti göstermek için)
-.hero-section {
-    padding: 10rem 1.5rem 5rem;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    opacity: 0.7;
-
-    // Fotoğrafın olduğu yerdeki halka stilini simüle edelim
-    .hero-avatar {
-        width: 200px;
-        height: 200px;
-        margin: 2rem auto;
-        border-radius: 50%;
-        background-color: var(--accent-color);
-        box-shadow: 0 0 0 12px var(--accent-color);
-    }
-}
     @media (max-width:1366px) {}
 
     @include media-breakpoint-down(lg) {}

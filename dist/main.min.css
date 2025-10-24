@@ -18414,22 +18414,6 @@ body:not(.dark-mode) .nav-links .settings-btn:hover {
   border-color: var(--accent-color);
 }
 
-.hero-section {
-  padding: 10rem 1.5rem 5rem;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  opacity: 0.7;
-}
-.hero-section .hero-avatar {
-  width: 200px;
-  height: 200px;
-  margin: 2rem auto;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 0 12px var(--accent-color);
-}
-
 @media (max-width: 767.96px) {
   .main-header {
     padding: 1rem;
@@ -19140,8 +19124,19 @@ body:not(.dark-mode) .settings-modal .modal-title {
   border-bottom-color: rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 767.96px) {
-  .backboxes {
-    display: none !important;
-  }
+.hero-section {
+  padding: 10rem 1.5rem 5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  opacity: 0.7;
+  display: flex;
+  justify-content: space-between;
+}
+.hero-section .hero-avatar {
+  width: 200px;
+  height: 200px;
+  margin: 2rem auto;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 0 12px var(--accent-color);
 }

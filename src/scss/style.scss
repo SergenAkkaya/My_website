@@ -3,6 +3,16 @@ html {
 }
 
 body{ }
+$accent-color: #9B59B6; // Varsayılan Mor
+$accent-color-dark: #8E44AD;
+$bg-dark: #111115;
+$bg-light: #FFFFFF;
+$card-bg-dark: #1A1A1E;
+$card-bg-light: #F7FAFC;
+$text-light: #F3F4F6;
+$text-dark: #111115;
+$secondary-text-dark: #A0AEC0;
+$secondary-text-light: #4A5568;
 
 @media (max-width:1366px) { }
 @include media-breakpoint-down(lg)  { }
