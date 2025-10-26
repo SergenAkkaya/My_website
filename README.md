@@ -1,2 +1,2 @@
 # My_website
-Hi! I am Sergen.
+Bu dosya kendi websitemi geliştirmede çizidiğim yol. Son halini beklemede kalın :)
