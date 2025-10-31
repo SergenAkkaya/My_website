@@ -19169,17 +19169,28 @@ body:not(.dark-mode) a {
   font-size: 2rem;
 }
 .hello_content_text_buttons_eposta, .hello_content_text_buttons_cv {
-  transition-duration: 0.8s;
-  cursor: pointer;
-  background-color: #9B59B6;
+  background-color: transparent;
+  border: 1px solid #9B59B6;
   text-decoration: none;
   padding: 0.75rem 1.5rem;
-  border-radius: 5px;
   font-weight: 200;
+  color: white;
+  position: relative;
 }
-.hello_content_text_buttons_eposta:hover, .hello_content_text_buttons_cv:hover {
-  transform: scale(1.1);
-  box-shadow: rgba(0, 0, 0, 0.1);
+.hello_content_text_buttons_eposta::before, .hello_content_text_buttons_cv::before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 100%;
+  background-color: var(--cv-bg, #9B59B6);
+  transition: 0.5s ease-in;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.hello_content_text_buttons_eposta:hover::before, .hello_content_text_buttons_cv:hover::before {
+  width: 100% !important;
 }
 .hello_content_img {
   width: 30rem;
@@ -19195,6 +19206,51 @@ body:not(.dark-mode) a {
 .hello_content .blob-profile-container svg {
   width: 100%;
   height: 100%;
+}
+
+.about {
+  width: 100%;
+  height: 100vh;
+}
+.about_header {
+  width: 100%;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+}
+.about_content {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+.about_content_text {
+  text-wrap: wrap;
+  font-size: 2rem;
+  font-weight: 500;
+  width: 50%;
+  word-spacing: 5px;
+}
+.about_content_ex {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  grid-area: 3;
+  gap: 1rem;
+}
+.about_content_ex_box {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid #9B59B6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 @media (max-width: 1199.96px) {
@@ -19232,7 +19288,6 @@ body:not(.dark-mode) a {
     text-decoration: none;
     padding: -0.25rem 0.5rem;
     border-radius: 5px;
-    font-weight: 200;
   }
   .hello_content .hello_content_img {
     width: 20rem;
