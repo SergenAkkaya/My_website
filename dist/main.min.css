@@ -19167,7 +19167,6 @@ body:not(.dark-mode) a {
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 2rem;
-  font-weight: 500;
 }
 .hello_content_text_buttons_eposta, .hello_content_text_buttons_cv {
   transition-duration: 0.8s;
@@ -19176,7 +19175,7 @@ body:not(.dark-mode) a {
   text-decoration: none;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
-  font-weight: 500;
+  font-weight: 200;
 }
 .hello_content_text_buttons_eposta:hover, .hello_content_text_buttons_cv:hover {
   transform: scale(1.1);
