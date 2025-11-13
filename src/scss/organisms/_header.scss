@@ -1,19 +1,8 @@
-
-// Sticky Header Stili (Scroll olduğunda eklenecek)
-.sticky-header {
-    position: sticky !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: rgba(17, 17, 21, 0.95) !important; // Transparan Siyah
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: $text-light !important;
+.sticky-header{
+    background-color: rgba(0, 0, 0, 0.5) !important;
 }
-
-// HEADER STİLİ
 .main-header {
+    position: fixed;
     width: 100%;
     padding: 2rem 0;
     transition: background-color 0.3s, padding 0.3s;
