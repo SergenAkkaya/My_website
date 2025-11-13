@@ -1,7 +1,7 @@
 
 // Sticky Header Stili (Scroll olduğunda eklenecek)
 .sticky-header {
-    position: fixed !important;
+    position: sticky !important;
     top: 0;
     left: 0;
     width: 100%;
@@ -14,14 +14,10 @@
 
 // HEADER STİLİ
 .main-header {
-    position: absolute; // Başlangıçta üstte sabit durması için
-    top: 0;
-    left: 0;
     width: 100%;
     padding: 2rem 0;
     transition: background-color 0.3s, padding 0.3s;
     z-index: 10;
-
     .header-container {
         max-width: 1400px;
         margin: 0 auto;
@@ -277,10 +273,16 @@
             padding: 1rem;
 
             .header-container {
-                padding: 0 0.5rem;
-                display: flex;
-                flex-direction: column !important;
+                padding: 16px;
+            }
+            .social-icon{
+                font-size: 1.5rem;
+            }
+            .nav-links{
                 gap: 1rem;
+            }
+            .logo-text{
+                font-size: 1rem;
             }
         }
     }

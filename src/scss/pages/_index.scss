@@ -1,62 +1,10 @@
-body {
-    font-family: 'Inter', sans-serif;
-    transition: background-color 0.3s, color 0.3s;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-
-    // Koyu Mod Stilleri
-    &.dark-mode {
-        background-color: $bg-dark;
-        color: $text-light;
-
-        .main-header {
-            background-color: transparent;
-        }
-
-        .settings-modal .modal-content {
-            background-color: $card-bg-dark;
-            color: $text-light;
-        }
-
-        .settings-modal .modal-title {
-            border-bottom-color: rgba(255, 255, 255, 0.1);
-        }
-
-        a {
-            color: $text-light;
-        }
-    }
-
-    // Açık Mod Stilleri
-    &:not(.dark-mode) {
-        background-color: $bg-light;
-        color: $text-dark;
-
-        .main-header {
-            background-color: transparent;
-        }
-
-        .settings-modal .modal-content {
-            background-color: $card-bg-light;
-            color: $text-dark;
-        }
-
-        .settings-modal .modal-title {
-            border-bottom-color: rgba(0, 0, 0, 0.1);
-        }
-
-        a {
-            color: $text-dark;
-        }
-    }
-}
 
 .hello {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &_content {
         width: 100%;
-        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -146,6 +94,10 @@ body {
 .about{
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
     &_header{
         width: 100%;
         text-align: center;
@@ -191,8 +143,6 @@ body {
 
 @include media-breakpoint-down(lg) {
     .hello {
-        margin-top: 5rem;
-
         &_content {
             gap: 20px;
 
@@ -210,13 +160,9 @@ body {
 
 @include media-breakpoint-down(md) {
     .hello {
-        margin-top: 5rem;
-        height: auto !important;
-
         &_content {
             flex-wrap: wrap;
             gap: 10px;
-
             &_text {
                 font-size: 2rem;
 
@@ -239,12 +185,22 @@ body {
             }
         }
     }
+    .about{
+        height: auto !important;
+        &_content{
+            flex-direction: column;
+            &_text{
+                width: 100% !important;
+            }
+        }
+    }
 }
 
 @include media-breakpoint-down(sm) {
+    .container{
+        padding: 20px;
+    }
     .hello {
-        margin-top: 7rem;
-
         &_content {
             justify-content: center !important;
 
@@ -261,8 +217,18 @@ body {
             }
 
             .hello_content_img {
-                width: 20rem;
-                height: 20rem;
+                width: 25rem;
+                height: 25rem;
+            }
+        }
+    }
+    .about{
+        &_header{
+            font-size: 2rem;
+        }
+        &_content{
+            &_text{
+                font-size: 1rem;
             }
         }
     }
