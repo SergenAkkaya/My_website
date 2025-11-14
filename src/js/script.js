@@ -229,96 +229,108 @@
         }
     };
     window.script = script;
-$(document).ready(function() {
-    
-    const $header = $('#main-header');
-    const $body = $('body');
-    const $settingsBtn = $('#settings-btn');
-    const $settingsModal = $('#settings-modal');
-    const $closeModalBtn = $('#close-modal-btn');
-    const $themeSwitch = $('#theme-switch');
-    const $colorBtns = $('.color-options .color-btn');
+    $(document).ready(function () {
 
-    // ----------------------------------------
-    // 1. STICKY HEADER VE SCROLL LOGİĞİ
-    // ----------------------------------------
-    $(window).on('scroll', function() {
-        // Scroll pozisyonu 50 pikselden büyükse sticky sınıfını ekle
-        if ($(this).scrollTop() > 1) {
+        const $header = $('#main-header');
+        const $body = $('body');
+        const $settingsBtn = $('#settings-btn');
+        const $settingsModal = $('#settings-modal');
+        const $closeModalBtn = $('#close-modal-btn');
+        const $themeSwitch = $('#theme-switch');
+        const $colorBtns = $('.color-options .color-btn');
+
+        // ----------------------------------------
+        // 1. STICKY HEADER VE SCROLL LOGİĞİ
+        // ----------------------------------------
+        $(window).on('scroll', function () {
+            // Scroll pozisyonu 50 pikselden büyükse sticky sınıfını ekle
+            if ($(this).scrollTop() > 1) {
+                $header.addClass('sticky-header');
+            } else {
+                $header.removeClass('sticky-header');
+            }
+        });
+
+        // Sayfa yüklendiğinde bir kere kontrol et
+        if ($(window).scrollTop() > 10) {
             $header.addClass('sticky-header');
-        } else {
-            $header.removeClass('sticky-header');
         }
-    });
-    
-    // Sayfa yüklendiğinde bir kere kontrol et
-    if ($(window).scrollTop() > 10) {
-        $header.addClass('sticky-header');
-    }
-    
-    // ----------------------------------------
-    // 2. AYARLAR MODAL (POP-UP) LOGİĞİ
-    // ----------------------------------------
-    
-    // Ayarlar butonuna tıklandığında menüyü aç/kapat
-    $settingsBtn.on('click', function() {
-        $settingsModal.toggleClass('active');
-    });
 
-    // Modal içindeki kapatma düğmesine tıklandığında menüyü kapat
-    $closeModalBtn.on('click', function() {
-        $settingsModal.removeClass('active');
-    });
+        // ----------------------------------------
+        // 2. AYARLAR MODAL (POP-UP) LOGİĞİ
+        // ----------------------------------------
 
-    // Modal dışına tıklandığında menüyü kapat
-    $settingsModal.on('click', function(e) {
-        // Modal içeriğine tıklanmadıysa (yani arka plana tıklandıysa)
-        if ($(e.target).is($settingsModal)) {
+        // Ayarlar butonuna tıklandığında menüyü aç/kapat
+        $settingsBtn.on('click', function () {
+            $settingsModal.toggleClass('active');
+        });
+
+        // Modal içindeki kapatma düğmesine tıklandığında menüyü kapat
+        $closeModalBtn.on('click', function () {
             $settingsModal.removeClass('active');
-        }
-    });
+        });
 
-    // ----------------------------------------
-    // 3. TEMA VE RENK AYARLARI LOGİĞİ
-    // ----------------------------------------
-    
-    // Koyu/Açık Mod Geçişi
-    // Başlangıçta body'de 'dark-mode' sınıfı olduğu için switch de 'checked' başlar.
-    $themeSwitch.on('change', function() {
-        if ($(this).is(':checked')) {
-            // Koyu Mod
-            $body.addClass('dark-mode');
-        } else {
-            // Açık Mod
-            $body.removeClass('dark-mode');
-        }
-        // Mevcut tema ayarını kaydetmek isterseniz burada localStorage kullanabilirsiniz.
-    });
+        // Modal dışına tıklandığında menüyü kapat
+        $settingsModal.on('click', function (e) {
+            // Modal içeriğine tıklanmadıysa (yani arka plana tıklandıysa)
+            if ($(e.target).is($settingsModal)) {
+                $settingsModal.removeClass('active');
+            }
+        });
 
-    // Vurgu Rengi Değiştirme
-    $colorBtns.on('click', function() {
-        const newColor = $(this).data('color');
-        
-        // 1. Yeni rengi CSS Değişkenine atama
-        document.documentElement.style.setProperty('--accent-color', newColor); 
-        
-        // 2. Rengin koyu tonunu hesaplama (Basit bir örnek, daha gelişmiş bir algoritma kullanılabilir)
-        // Burada basitçe, seçilen rengin biraz daha koyu bir tonunu hesaplayıp hover efekti için kullanıyoruz.
-        let darkColor = newColor; 
-        if (newColor === '#9B59B6') { darkColor = '#8E44AD'; } // Mor
-        else if (newColor === '#3498DB') { darkColor = '#2980B9'; } // Mavi
-        else if (newColor === '#2ECC71') { darkColor = '#27AE60'; } // Yeşil
-        else if (newColor === '#E74C3C') { darkColor = '#C0392B'; } // Kırmızı
-        
-        document.documentElement.style.setProperty('--accent-color-dark', darkColor);
-        // 3. Aktif düğme sınıfını güncelleme
-        $colorBtns.removeClass('active');
-        $(this).addClass('active');
-        // 4. Arka plan kutularının rengini güncelleme
-        $(".backboxNew").css("background-color", newColor);
+        // ----------------------------------------
+        // 3. TEMA VE RENK AYARLARI LOGİĞİ
+        // ----------------------------------------
 
+        // Koyu/Açık Mod Geçişi
+        // Başlangıçta body'de 'dark-mode' sınıfı olduğu için switch de 'checked' başlar.
+        $themeSwitch.on('change', function () {
+            if ($(this).is(':checked')) {
+                // Koyu Mod
+                $body.addClass('dark-mode');
+            } else {
+                // Açık Mod
+                $body.removeClass('dark-mode');
+            }
+            // Mevcut tema ayarını kaydetmek isterseniz burada localStorage kullanabilirsiniz.
+        });
+
+        // Vurgu Rengi Değiştirme
+        $colorBtns.on('click', function () {
+            const newColor = $(this).data('color');
+
+            // 1. Yeni rengi CSS Değişkenine atama
+            document.documentElement.style.setProperty('--accent-color', newColor);
+
+            // 2. Rengin koyu tonunu hesaplama (Basit bir örnek, daha gelişmiş bir algoritma kullanılabilir)
+            // Burada basitçe, seçilen rengin biraz daha koyu bir tonunu hesaplayıp hover efekti için kullanıyoruz.
+            let darkColor = newColor;
+            if (newColor === '#9B59B6') { darkColor = '#8E44AD'; } // Mor
+            else if (newColor === '#3498DB') { darkColor = '#2980B9'; } // Mavi
+            else if (newColor === '#2ECC71') { darkColor = '#27AE60'; } // Yeşil
+            else if (newColor === '#E74C3C') { darkColor = '#C0392B'; } // Kırmızı
+
+            document.documentElement.style.setProperty('--accent-color-dark', darkColor);
+            // 3. Aktif düğme sınıfını güncelleme
+            $colorBtns.removeClass('active');
+            $(this).addClass('active');
+            // 4. Arka plan kutularının rengini güncelleme
+            $(".backboxNew").css("background-color", newColor);
+            $(".hello_content_text_buttons_eposta").css("border", "1px solid" + newColor);
+            $(".hello_content_text_buttons_cv").css("border", "1px solid" + newColor);
+            $(".hello_content_text_buttons_eposta").css("--cv-bg", newColor);
+            $(".hello_content_text_buttons_cv").css("--cv-bg", newColor);
+            $(".blob").css("fill", newColor);
+            $(".about_content_container_box").css("border", "1px solid" + newColor);
+            $("head").append(
+            `
+            <style>
+            .about_content_container_box:hover { background-color: ${newColor} !important; }
+            </style>
+            `);
+
+        });
     });
-});
 
 
 })(jQuery);
